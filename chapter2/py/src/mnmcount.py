@@ -12,6 +12,8 @@ if __name__ == "__main__":
     spark = (SparkSession
         .builder
         .appName("PythonMnMCount")
+        .config('spark.driver.host', '127.0.0.1')
+        .config('spark.driver.bindAddress', '127.0.0.1')
         .getOrCreate())
     # get the M&M data set file name
     mnm_file = sys.argv[1]
